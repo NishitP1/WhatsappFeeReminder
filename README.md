@@ -1,5 +1,3 @@
-# WhatsappFeeReminder
-# WhatsApp Fee Reminder System
 # WhatsApp Fee Reminder System
 
 ## Overview
