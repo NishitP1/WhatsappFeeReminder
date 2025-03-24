@@ -82,4 +82,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Socket.IO](https://socket.io/) for real-time communication.
 
 ## Contact
-For any inquiries, please contact [your_email@example.com].
+For any inquiries, please contact dojonishit@gmail.com.
