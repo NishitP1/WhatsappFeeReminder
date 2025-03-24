@@ -4,7 +4,8 @@
   "description": "WhatsApp fee reminder with web GUI",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node build.js" 
   },
   "dependencies": {
     "agenda": "^5.0.0",
@@ -22,6 +23,7 @@
     "puppeteer": "^24.4.0",
     "qrcode": "^1.5.3",
     "socket.io": "^4.7.4",
+    "uuid": "^11.1.0",
     "whatsapp-web.js": "^1.26.1-alpha.3",
     "winston": "^3.11.0",
     "xlsx": "^0.18.5"
