@@ -51,14 +51,38 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
    ```
 
 4. **Create Database**:
-   Create a MySQL database named `whatsapp_reminder` and set up the necessary tables (refer to the SQL scripts in the repository if available).
-
-5. **Run the Application**:
+    Create a MySQL database named `whatsapp_reminder`.
+   CREATE TABLE users (
+    id VARCHAR(36) PRIMARY KEY,          -- UUID for user ID
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,      -- Hashed password
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
+   CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(36) NOT NULL,        -- Links to users.id
+    name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,          -- International format (+XXX...)
+    amount DECIMAL(10,2) NOT NULL,       -- Fee amount
+    due_date DATE,                       -- Fee due date
+    last_reminder_sent TIMESTAMP NULL,   -- Last reminder timestamp
+    reminder_date TIMESTAMP NULL,        -- Scheduled reminder date
+    is_sent BOOLEAN DEFAULT FALSE,       -- Whether reminder was sent
+    FOREIGN KEY (user_id) REFERENCES users(id)
+   );
+   CREATE TABLE whatsapp_sessions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(36) NOT NULL,        -- Links to users.id
+    session_data TEXT NOT NULL,          -- WhatsApp session data
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+   );
+6. **Run the Application**:
    ```bash
    npm start
    ```
 
-6. **Access the Application**:
+7. **Access the Application**:
    Open your browser and navigate to `http://localhost:3000`.
 
 ## Usage
