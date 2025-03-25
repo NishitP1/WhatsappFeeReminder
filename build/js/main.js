@@ -8,7 +8,6 @@ const socket = io({
     }
 });
 
-// Add these selectors at the top
 const messageTemplateForm = getEl('messageTemplateForm');
 const messageTemplateEl = getEl('messageTemplate');
 const sendRemindersBtn = getEl('sendRemindersBtn');
