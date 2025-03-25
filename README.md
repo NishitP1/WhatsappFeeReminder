@@ -52,6 +52,7 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
    ```
 
 4. **Create Database**:
+   ```
     Create a MySQL database named whatsapp_reminder.
    CREATE TABLE users (
     id VARCHAR(36) PRIMARY KEY,          -- UUID for user ID
@@ -59,7 +60,9 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
     password VARCHAR(255) NOT NULL,      -- Hashed password
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
    );
+   ```
    
+   ```
    CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(36) NOT NULL,        -- Links to users.id
@@ -73,6 +76,7 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
     FOREIGN KEY (user_id) REFERENCES users(id)
    );
    
+   ```
    CREATE TABLE whatsapp_sessions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(36) NOT NULL,        -- Links to users.id
@@ -80,6 +84,7 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
    );
+   ```
    
 6. **Run the Application**:
    ```bash
