@@ -75,6 +75,7 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
     is_sent BOOLEAN DEFAULT FALSE,       -- Whether reminder was sent
     FOREIGN KEY (user_id) REFERENCES users(id)
    );
+   ```
    
    ```
    CREATE TABLE whatsapp_sessions (
