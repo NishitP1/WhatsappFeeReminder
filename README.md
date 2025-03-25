@@ -48,6 +48,7 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
    DB_PASSWORD=your_password
    DB_NAME=whatsapp_reminder
    JWT_SECRET=your_jwt_secret
+   PORT=3000; -- if not hardcoded
    ```
 
 4. **Create Database**:
