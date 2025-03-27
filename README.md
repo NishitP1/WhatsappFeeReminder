@@ -55,9 +55,9 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
    ```
     Create a MySQL database named whatsapp_reminder.
    CREATE TABLE users (
-    id VARCHAR(36) PRIMARY KEY,          -- UUID for user ID
+    id VARCHAR(36) PRIMARY KEY,          
     username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,      -- Hashed password
+    password VARCHAR(255) NOT NULL,      
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
    );
    ```
@@ -65,14 +65,14 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
    ```
    CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id VARCHAR(36) NOT NULL,        -- Links to users.id
+    user_id VARCHAR(36) NOT NULL,        
     name VARCHAR(100) NOT NULL,
-    phone VARCHAR(20) NOT NULL,          -- International format (+XXX...)
-    amount DECIMAL(10,2) NOT NULL,       -- Fee amount
-    due_date DATE,                       -- Fee due date
-    last_reminder_sent TIMESTAMP NULL,   -- Last reminder timestamp
-    reminder_date TIMESTAMP NULL,        -- Scheduled reminder date
-    is_sent BOOLEAN DEFAULT FALSE,       -- Whether reminder was sent
+    phone VARCHAR(20) NOT NULL,         
+    amount DECIMAL(10,2) NOT NULL,       
+    due_date DATE,                      
+    last_reminder_sent TIMESTAMP NULL,   
+    reminder_date TIMESTAMP NULL,        
+    is_sent BOOLEAN DEFAULT FALSE,      
     FOREIGN KEY (user_id) REFERENCES users(id)
    );
    ```
@@ -80,8 +80,8 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
    ```
    CREATE TABLE whatsapp_sessions (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id VARCHAR(36) NOT NULL,        -- Links to users.id
-    session_data TEXT NOT NULL,          -- WhatsApp session data
+    user_id VARCHAR(36) NOT NULL,       
+    session_data TEXT NOT NULL,         
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
    );
