@@ -53,13 +53,16 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
 
 4. **Create Database**:
    ```
-    Create a MySQL database named whatsapp_reminder.
-   CREATE TABLE users (
+    CREATE DATABASE whatsapp_reminder;
+USE whatsapp_reminder;
+
+CREATE TABLE users (
     id VARCHAR(36) PRIMARY KEY,          
     username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,      
+    password VARCHAR(255) NOT NULL,
+    whatsapp_session_data TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-   );
+);
    ```
    
    ```
@@ -70,21 +73,30 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
     phone VARCHAR(20) NOT NULL,         
     amount DECIMAL(10,2) NOT NULL,       
     due_date DATE,                      
-    last_reminder_sent TIMESTAMP NULL,   
-    reminder_date TIMESTAMP NULL,        
-    is_sent BOOLEAN DEFAULT FALSE,      
+    last_reminder_sent DATETIME NULL,   
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    message_time DATETIME NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'pending',
+    reminder_scheduled TINYINT(1) DEFAULT 0,
+    reminder_sent TINYINT(1) DEFAULT 0,
+    reminder_date DATETIME NULL,
+    is_sent TINYINT(1) DEFAULT 0,      
+    retry_count INT DEFAULT 0,
+    last_attempt DATETIME NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
-   );
+);
+
    ```
    
    ```
    CREATE TABLE whatsapp_sessions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id VARCHAR(36) NOT NULL,       
-    session_data TEXT NOT NULL,         
+    status VARCHAR(50) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_active TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
-   );
+);
    ```
    
 6. **Run the Application**:
