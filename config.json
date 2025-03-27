@@ -1,0 +1,7 @@
+{
+  "excelFilePath": "uploads/student_fees.xlsx",
+  "defaultCountryCode": "+91",
+  "messageTemplate": "Dear {{name}}, your fee of {{amount}} is due by {{dueDate}}. Kindly make the payment to avoid any inconvenience.",
+  "scheduledHour": 10,
+  "scheduledMinute": 0
+}
