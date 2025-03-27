@@ -1,0 +1,73 @@
+.logs-container {
+    height: 300px;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 0.85rem;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+.log-entry {
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.log-timestamp {
+    color: #6c757d;
+    margin-right: 0.5rem;
+}
+
+.log-level-info {
+    color: #17a2b8;
+}
+
+.log-level-error {
+    color: #dc3545;
+}
+
+.log-level-warn {
+    color: #ffc107;
+}
+
+.student-item {
+    position: relative;
+}
+
+.student-status {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#connectWhatsApp:not(.d-none), #disconnectWhatsApp:not(.d-none) {
+    display: inline-block !important;
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
