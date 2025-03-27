@@ -31,7 +31,7 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
 ### Steps
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/whatsapp-fee-reminder.git
+   git clone https://github.com/NishitP1/WhatsappFeeReminder.git
    cd whatsapp-fee-reminder
    ```
 
