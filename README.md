@@ -70,7 +70,7 @@ The WhatsApp Fee Reminder System is a web application designed to automate fee r
    ```
    CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id VARCHAR(36) NOT NULL,        
+    user_id VARCHAR(36) NULL,        
     name VARCHAR(100) NOT NULL,
     phone VARCHAR(20) NOT NULL,         
     amount DECIMAL(10,2) NOT NULL,       
